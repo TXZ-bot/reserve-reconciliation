@@ -1,0 +1,108 @@
+# Deploy to GitHub Pages: Step-by-Step Guide
+
+## Prerequisites
+- GitHub account (free at github.com)
+- Git installed on your computer
+- The project code downloaded
+
+## Step 1: Create a GitHub Repository
+
+1. Go to github.com and log in
+2. Click the + icon (top right) → New repository
+3. Name it: reserve-reconciliation-advocate
+4. Choose Public (so your teacher can access it)
+5. Do NOT initialize with README, .gitignore, or license
+6. Click Create repository
+7. Copy the repository URL (it will look like https://github.com/YOUR-USERNAME/reserve-reconciliation-advocate.git )
+
+## Step 2: Prepare Your Project for GitHub Pages
+
+1. Open your project folder in Command Prompt
+2. Navigate to the project directory:
+   cd C:\Users\Vijay\Desktop\reserve-reconciliation-advocate
+
+3. Update vite.config.ts to add the base path. Open the file and find the export default defineConfig section. Add this line:
+   base: '/reserve-reconciliation-advocate/',
+   
+   It should look like:
+   export default defineConfig({
+     base: '/reserve-reconciliation-advocate/',
+     plugins: [react(), ...],
+   })
+
+## Step 3: Build the Project
+
+1. In Command Prompt, run:
+   npm install
+
+2. Build the project:
+   npm run build
+   (This creates a dist folder with your website)
+
+## Step 4: Initialize Git and Push to GitHub
+
+1. In Command Prompt, initialize git:
+   git init
+
+2. Add all files:
+   git add .
+
+3. Create your first commit:
+   git commit -m "Initial commit: Reconciliation advocacy website"
+
+4. Add the GitHub remote (replace with your repository URL from Step 1):
+   git remote add origin https://github.com/YOUR-USERNAME/reserve-reconciliation-advocate.git
+
+5. Push to GitHub:
+   git branch -M main
+   git push -u origin main
+
+## Step 5: Enable GitHub Pages
+
+1. Go to your repository on GitHub
+2. Click Settings (top right )
+3. In the left sidebar, click Pages
+4. Under "Build and deployment":
+   - Source: Select Deploy from a branch
+   - Branch: Select main
+   - Folder: Select /dist
+5. Click Save
+
+GitHub will now build and deploy your site. This takes 1-2 minutes.
+
+## Step 6: Get Your Live Link
+
+1. Go back to Settings → Pages
+2. You'll see a message: "Your site is live at https://YOUR-USERNAME.github.io/reserve-reconciliation-advocate/"
+3. This is your shareable link! Copy it and send to your teacher.
+
+## Troubleshooting
+
+Image not loading?
+- Make sure you added the base path in vite.config.ts
+- Double-check: base: '/reserve-reconciliation-advocate/',
+
+Page not loading?
+- Wait 2-3 minutes after enabling GitHub Pages
+- Check that branch is set to main and folder is /dist
+- Clear your browser cache
+
+## Making Updates
+
+If you want to update your website later:
+
+1. Make changes to your code
+2. Run npm run build again
+3. Commit and push:
+   git add .
+   git commit -m "Update: [describe your changes]"
+   git push
+
+GitHub Pages will automatically rebuild and deploy your changes within 1-2 minutes.
+
+---
+
+Your live website URL will be:
+https://YOUR-USERNAME.github.io/reserve-reconciliation-advocate/
+
+Share this link with your teacher!
